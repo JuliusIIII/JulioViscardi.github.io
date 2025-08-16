@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Júlio Viscardi - Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+  <header>
+
+    <h1>Júlio Viscardi</h1>
+
+  </header>
+
+  <div class="intro">
+
+    <p>
+      Estudante da 4ª fase de Design Gráfico na UDESC
+    </p>
+      
+    <p>
+      Apresento aqui os trabalhos que desenvolvi até o momento.
+    </p>
+
+  </div>
+
+
+  <section class="galeria limitada">
+
+    <h2 class="toggle-expand">Desenhos</h2>
+
+    <div class="imagens-wrapper">
+      <div class="imagens conteudo-limitado">
+        <div>
+          <img src="images/WoU.jpg" alt="Desenho 1" class="click-expand">
+          <img src="images/Musashi.jpg" alt="Desenho 2" class="click-expand">
+        </div>
+        <div>
+          <img src="images/JesusBizantino.jpg" alt="Desenho 3" class="click-expand">
+          <img src="images/Caveira.jpg" alt="Desenho 4" class="click-expand">
+        </div>
+        <div>
+          <img src="images/ReiBaldwin.jpg" alt="Desenho 5" class="click-expand">
+          <img src="images/Fukumamizushi.jpg" alt="Desenho 6" class="click-expand">
+        </div>
+        <div>
+          <img src="images/Enots.jpg" alt="Desenho 7" class="click-expand">
+          <img src="images/Estátua.jpg" alt="Desenho 8" class="click-expand">
+        </div>
+        <div>
+          <img src="images/kobe.jpg" alt="Desenho 7" class="click-expand">
+          <img src="images/Facehomem.jpg" alt="Desenho 8" class="click-expand">
+        </div>
+      </div>
+
+      <div class="fade-mask"></div>
+    </div>
+
+  </section>
+
+
+  <section class="tipografia limitada">
+
+    <h2 class="toggle-expand">Projeto Tipográfico</h2>
+
+    <p id="bloke">BLOKE</p>
+
+    <div class="caixa">
+
+      <p id="texto" class="description">
+        Quisemos passar uma ideia de sofisticação e luxo com a fonte Bloke.</p><p class="description">Bloke é uma tipografia display em caixa-alta, com alto contraste e proporções condensadas, criada para transmitir elegância em títulos tanto em mídias digitais quanto impressas.
+      </p>
+
+    </div>
+
+
+    <div class="imagens-wrapper">
+      <div class="imagens conteudo-limitado">
+        <div>
+          <img src="images/PosterBloke1.jpg" alt="bloke1" class="click-expand">
+          <img src="images/PosterBloke2.jpg" alt="bloke2" class="click-expand">
+        </div>
+        <div>
+          <img src="images/mockup vinho bloke.jpg" alt="bloke3" class="click-expand">
+        </div>
+      </div>
+
+      <div class="fade-mask"></div>
+    </div>
+
+  </section>
+
+
+  <section class="galeria limitada">
+
+    <h2 class="toggle-expand">Projeto de Baralho</h2>
+
+      <div class="caixa">
+
+        <p class="description">
+          Quisemos relembrar aos jovens de hoje as lendas da ilha, que estão se perdendo, tomando Franklin Cascaes como base para o nosso projeto.
+        </p>
+
+      </div>
+
+    <div class="imagens-wrapper">
+      <div class="imagens conteudo-limitado">
+        <div>
+          <img src="images/mockup embalagem baralho 2.jpg" alt="Desenho 1" class="click-expand">
+          <img src="images/Cartas2.jpg" alt="Desenho 2" class="click-expand">
+        </div>
+        <div>
+          <img src="images/Cartas1.jpg" alt="Desenho 3" class="click-expand">
+          <img src="images/Cartas3.jpg" alt="Desenho 4" class="click-expand">
+        </div>
+      </div>
+
+      <div class="fade-mask"></div>
+    </div>
+
+  </section>
+
+    
+  <div id="modal" class="modal">
+
+    <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img">
+
+  </div>
+
+
+  <script>
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close");
+
+
+    const images = document.querySelectorAll(".click-expand");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        document.body.classList.add("blur-active");
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      document.body.classList.remove("blur-active");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.classList.remove("blur-active");
+      }
+    });
+
+    const toggleHeaders = document.querySelectorAll(".toggle-expand");
+
+    toggleHeaders.forEach(h2 => {
+    h2.addEventListener("click", () => {
+      h2.classList.toggle("expandido");
+
+      const section = h2.closest("section");
+
+      const wrapper = section.querySelector(".imagens-wrapper");
+      const imagens = wrapper.querySelector(".conteudo-limitado");
+
+      if (imagens.classList.contains("expandido")) {
+        imagens.classList.remove("expandido");
+        wrapper.style.maxHeight = "37.5vw";
+      } else {
+        imagens.classList.add("expandido");
+        wrapper.style.maxHeight = "none";
+      }
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

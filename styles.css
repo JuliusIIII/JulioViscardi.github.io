@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&family=Bree+Serif&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'Bloke';
+    src: url('Bloke-Regular.woff2') format('woff2'),
+        url('Bloke-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    background: #1c1c1c;
+    color: #d6d6d6;
+    padding: 20px;
+}
+
+header {
+    background-color: #33333300;
+    border: 5px solid #d6d6d6;
+    max-width: 60vw;
+    margin: 40px auto;
+    padding: 0px 15px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.intro {
+  font-size: 2.5vw;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  color: #d6d6d6;
+}
+
+h1 {
+    font-size: 8vw;
+    text-shadow: 0 0 10px rgba(216, 216, 216, 0.2);
+    font-family: 'League Spartan', sans-serif;
+}
+
+h2 {
+    font-size: 5vw;
+    margin: 20px 0;
+    font-family: 'Andada Pro', serif;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+h2:after {
+  content: "";
+  display: block;
+  width: 40vw;
+  height: 0.4vh;
+  background-color: #d6d6d6;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+.caixa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    font-size: 2.5vw;
+    max-width: 850px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+#texto {
+    margin-top: -70px;
+    margin-bottom: 10px;
+}
+
+#bloke {
+    font-size: 30vw;
+    margin: 20px 0;
+    font-family: 'Bloke', sans-serif;
+    text-align: center;
+}
+
+section {
+    margin: 50px 0;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.imagens > div {
+    display: flex;
+    gap: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 25vw;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.blur-on-scroll {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+  max-width: 80vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block; 
+  pointer-events: auto;
+}
+
+.close {
+    position: absolute;
+    top: 20px; right: 40px;
+    color: #d6d6d6;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.05);
+}
+
+.imagens-wrapper {
+  position: relative;
+  max-height: 37.5vw;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.conteudo-limitado.expandido + .fade-mask {
+  display: none;
+}
+
+.fade-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #1c1c1c);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-expand {
+  cursor: pointer;
+  position: relative;
+}
+
+h2:hover {
+  transform: scale(1.05);
+}
+
+.wrapper-limitado {
+  position: relative;
+  max-height: 37.5vw;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.wrapper-limitado.expandido {
+  max-height: none;
+}
+
+.fade-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #1c1c1c);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.wrapper-limitado.expandido .fade-mask {
+  display: none;
+}
