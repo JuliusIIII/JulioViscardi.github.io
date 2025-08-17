@@ -38,6 +38,10 @@ header {
   color: #d6d6d6;
 }
 
+.txintro {
+    max-width: 850px;
+}
+
 h1 {
     font-size: 8vw;
     text-shadow: 0 0 10px rgba(216, 216, 216, 0.2);
