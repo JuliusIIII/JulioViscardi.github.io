@@ -31,15 +31,19 @@ header {
 }
 
 .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 2.5vw;
   font-family: 'Lato', sans-serif;
-  text-align: center;
   margin-top: 10px;
   color: #d6d6d6;
 }
 
 .txintro {
     max-width: 850px;
+    text-align: center;
 }
 
 h1 {
